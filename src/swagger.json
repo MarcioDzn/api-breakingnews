@@ -10,7 +10,7 @@
     },
     "servers": [
       {
-        "url": "https://api-breakingnews-u83a.onrender.com/",
+        "url": "https://api-breakingnews-u83a.onrender.com",
         "description": "Render Server"
       },
       {
