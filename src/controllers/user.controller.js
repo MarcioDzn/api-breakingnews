@@ -36,10 +36,6 @@ const findAll = async (req, res) => {
     try {
         const users = await userService.findAllService()
 
-        if (users.length === 0) {
-            return res.status(400).send("There are no registered users")
-        }
-
         res.send(users)
     } catch (err) {
         res.status(500).send({ message: err })

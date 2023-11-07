@@ -66,12 +66,6 @@ const findAll = async (req, res) => {
         const previousUrl =
             previous != null ? `${currentUrl}?limit=${limit}&offset=${previous}` : null;
 
-        if (news.length === 0) {
-            return res.status(400).send({
-                message: "There are no registered users",
-            })
-        }
-
         res.send({
             nextUrl,
             previousUrl,
@@ -156,10 +150,6 @@ const searchByTitle = async (req, res) => {
         const { title } = req.query; // recebe o titulo por queryString
 
         const news = await searchByTitleService(title);
-
-        if (news.length === 0) {
-            return res.status(400).send({ message: "There is no posts with this title" })
-        }
 
         res.send({
             results: news.map((newsItem) => ({
